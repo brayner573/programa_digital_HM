@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICE - Sistema Integrado de Consulta de Expedientes (Simulador Académico)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<section id="vistaLogin" class="login">
+  <form id="formLogin" class="login-box" autocomplete="off">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+      <div style="width:44px;height:44px;border-radius:8px;background:#090a10;display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid var(--pink-main);box-shadow:var(--pink-glow)">⚖️</div>
+      <div>
+        <h1 style="margin:0;font-size:30px;line-height:1">SICE<span>.</span></h1>
+        <div style="font-size:10px;font-weight:800;color:var(--pink-main);letter-spacing:1px;text-transform:uppercase">Poder Judicial del Perú</div>
+      </div>
+    </div>
+    <p class="sub">Sistema Integrado de Consulta de Expedientes Judiciales</p>
+    <h2 id="tituloLogin">Iniciar sesión</h2>
+    <label>Usuario <input id="lUser" required minlength="4" placeholder="Ej. harry"></label>
+    <label>Contraseña <input id="lPass" type="password" required minlength="6" placeholder="••••••"></label>
+    <label id="lblNombre" hidden>Nombre completo <input id="lNombre" placeholder="Tu nombre"></label>
+    <p id="loginMsg" class="msg" role="alert"></p>
+    <button class="btn" type="submit" id="btnLogin">Ingresar al Sistema</button>
+    <button class="link" type="button" id="btnModo">¿No tienes cuenta? Regístrate</button>
+    <div style="margin-top:10px;padding:9px 14px;background:#141724;border:1px solid var(--pink-border);border-radius:6px;font-size:12px;color:#ffffff;text-align:center;">
+      <span>🏛️ <b>Acceso Rápido:</b> Usuario: <code style="color:var(--pink-main);font-weight:800">harry</code> | Clave: <code style="color:var(--pink-main);font-weight:800">123456</code></span>
+    </div>
+    <p class="aviso">Simulador con fines académicos. Consulta pública de resoluciones y actuaciones judiciales.</p>
+  </form>
+</section>
+
+<!-- ===== APP ===== -->
+<div id="vistaApp" hidden>
+  <header class="top">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:22px">⚖️</span>
+      <div>
+        <b class="logo" style="margin:0">SICE</b>
+        <small style="margin-left:8px;color:#94a3b8;font-weight:700">PODER JUDICIAL DEL PERÚ • CONSULTA DE EXPEDIENTES</small>
+      </div>
+    </div>
+    <div class="top-r"><span id="usuario"></span><button class="btn-s" id="btnSalir">Cerrar sesión</button></div>
+  </header>
+  <nav class="nav">
+    <a href="#">INICIO</a><a href="#" id="navAyuda">PREGUNTAS FRECUENTES</a><a href="https://spij.minjus.gob.pe/spij-ext-web/#/inicio" target="_blank">SpijExtWeb</a>
+    <span class="reloj" id="reloj"></span>
+    <a href="admin.html" target="_blank" class="btn-admin-nav" id="btnAdmin" hidden title="Abrir Panel de Administración en otra ventana">⚙️ Gestión de Expedientes ↗</a>
+  </nav>
+
+  <main>
+    <div class="comunicado">
+      <h3>COMUNICADO</h3>
+      <p>A partir de la fecha, se ha incluido un nuevo campo como medida técnica de protección, para que solo las partes puedan acceder a sus expedientes, al amparo de la Ley N° 29733, Ley de Protección de Datos Personales.</p>
+    </div>
+
+    <h2 class="tit">BÚSQUEDA DE EXPEDIENTES</h2>
+    <div class="tabs">
+      <button class="tab on" data-t="filtros">Por filtros</button>
+      <button class="tab" data-t="codigo">Por Código de Expediente</button>
+    </div>
+
+    <form id="formBusq" class="panel" autocomplete="off">
+      <div id="pFiltros">
+        <div class="fila"><label>Distrito Judicial (*)</label><select id="fDist"></select></div>
+        <div class="fila"><label>Instancia (*)</label><select id="fInst"></select></div>
+        <div class="fila"><label>Especialidad (*)</label><select id="fEsp"></select></div>
+        <div class="fila"><label>Año (*)</label><select id="fAnio"></select></div>
+        <div class="fila"><label>N° Expediente (*)</label><input id="fNum" maxlength="5" inputmode="numeric" placeholder="00203"></div>
+      </div>
+
+      <div id="pCodigo" hidden>
+        <p class="centro"><b>Código del expediente:</b></p>
+        <div class="cod">
+          <label>Secuencia (*)<small>5 dígitos</small><input id="c1" maxlength="5" inputmode="numeric"></label><i>-</i>
+          <label>Año<small>4 dígitos</small><input id="c2" maxlength="4" inputmode="numeric"></label><i>-</i>
+          <label>Órgano<small>1 dígito</small><input id="c3" maxlength="1" inputmode="numeric"></label><i>-</i>
+          <label>Distrito<small>4 dígitos</small><input id="c4" maxlength="4" inputmode="numeric"></label><i>-</i>
+          <label>Instancia<small>2 letras</small><input id="c5" maxlength="2"></label><i>-</i>
+          <label>Especialidad<small>2 letras</small><input id="c6" maxlength="2"></label><i>-</i>
+          <label>Correlativo<small>2 dígitos</small><input id="c7" maxlength="2" inputmode="numeric"></label>
+        </div>
+        <div class="ejem">
+          <small>EJEMPLOS DE FORMATO</small>
+          <button type="button" data-ej="00203-2025-0-2101-JP-FC-01">Expediente N°: 00203-2025-0-2101-JP-FC-01</button>
+          <button type="button" data-ej="00417-2024-0-2101-JR-CI-02">Expediente N°: 00417-2024-0-2101-JR-CI-02</button>
+        </div>
+      </div>
+
+
+      <div class="fila sep"><label>Parte <small style="font-weight:400;color:#bbb">(opcional)</small></label>
+        <div><input id="fParte" placeholder="Ej: FRANCO, APAZA, COMERCIAL ANDINA...">
+        <p class="ayuda">Opcional. Si lo escribes, ingresa al menos 3 letras del nombre o apellido de una de las partes.</p></div>
+      </div>
+
+      <div class="captcha">
+        <b>Escriba el código mostrado</b>
+        <div class="cap-row">
+          <canvas id="cap" width="170" height="46" aria-label="Código de confirmación"></canvas>
+          <button type="button" class="ico" id="capRef" title="Nuevo código">⟳</button>
+          <button type="button" class="ico" id="capVoz" title="Escuchar código">🔊</button>
+          <input id="capIn" maxlength="5" placeholder="código" autocomplete="off">
+        </div>
+        <p id="busqMsg" class="msg" role="alert"></p>
+        <button class="btn" type="submit">CONSULTAR</button>
+      </div>
+    </form>
+
+    <section id="resultados" hidden></section>
+
+    <!-- ===== DETALLE DEL EXPEDIENTE ===== -->
+    <section id="detalleExp" hidden>
+
+      <!-- REPORTE DE EXPEDIENTE -->
+      <div class="det-bloque">
+        <div class="det-bloque-hdr">📋 REPORTE DE EXPEDIENTE</div>
+        <div class="det-bloque-body">
+          <div class="case-grid">
+            <div class="case-campo"><span>Expediente N°:</span><b id="det-codigo"></b></div>
+            <div class="case-campo"><span>Distrito Judicial:</span><b id="det-distrito"></b></div>
+            <div class="case-campo"><span>Órgano Jurisdiccional:</span><b id="det-organo"></b></div>
+            <div class="case-campo"><span>Especialista Legal:</span><b id="det-especialista"></b></div>
+            <div class="case-campo"><span>Juez/Jueza:</span><b id="det-juez"></b></div>
+            <div class="case-campo"><span>Proceso:</span><b id="det-proceso"></b></div>
+            <div class="case-campo"><span>Fecha de Inicio:</span><b id="det-fechaIni"></b></div>
+            <div class="case-campo"><span>Especialidad:</span><b id="det-especialidad"></b></div>
+            <div class="case-campo span2"><span>Observación:</span><b id="det-obs"></b></div>
+            <div class="case-campo"><span>Estado:</span><b id="det-estado" class="estado-val"></b></div>
+            <div class="case-campo"><span>Materia(s):</span><b id="det-materia"></b></div>
+            <div class="case-campo"><span>Fecha Conclusión:</span><b id="det-fechaFin"></b></div>
+            <div class="case-campo"><span>Etapa Procesal:</span><b id="det-etapa"></b></div>
+            <div class="case-campo"><span>Motivo Conclusión:</span><b id="det-motivo"></b></div>
+            <div class="case-campo"><span>Ubicación:</span><b id="det-ubicacion"></b></div>
+            <div class="case-campo span2"><span>Sumilla:</span><b id="det-sumilla"></b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTADO Y PROGRESO -->
+      <div class="det-bloque">
+        <div class="det-bloque-hdr">📊 ESTADO, PROGRESO Y LÍNEA DE TIEMPO (MCCLO)</div>
+        <div class="det-bloque-body">
+          <div class="prog-wrap">
+            <div class="prog-label">Avance Global del Proceso <span id="det-progreso-pct" class="prog-pct"></span></div>
+            <div class="prog-track"><div class="prog-bar" id="det-progreso-bar"></div></div>
+            <p class="prog-msg">ℹ️ <span id="det-progreso-msg"></span></p>
+          </div>
+          <div class="timeline-grid">
+            <div>
+              <h4>⚙ ETAPA PROCESAL (MODELO ORAL)</h4>
+              <div id="det-etapas" class="etapas-list"></div>
+            </div>
+            <div>
+              <h4>🕐 HITOS DEL EXPEDIENTE</h4>
+              <div id="det-hitos" class="hitos-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTES PROCESALES -->
+      <div class="det-bloque">
+        <div class="det-bloque-hdr">👥 PARTES PROCESALES</div>
+        <div class="det-bloque-body">
+          <div style="overflow-x:auto">
+            <table class="partes-table">
+              <thead><tr><th>Parte</th><th>Tipo de Persona</th><th>Apellido Paterno / Razón Social</th><th>Apellido Materno</th><th>Nombres</th></tr></thead>
+              <tbody id="det-partes"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEGUIMIENTO DEL EXPEDIENTE -->
+      <div class="det-bloque">
+        <div class="det-bloque-hdr">📄 SEGUIMIENTO DEL EXPEDIENTE</div>
+        <div class="det-bloque-body">
+          <div id="det-paginacion" class="paginacion"></div>
+          <div id="det-acts"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>Av. Paseo de la República S/N Palacio de Justicia, Cercado, Lima - Perú<br>Copyright © 2026 · Simulador académico, datos ficticios</footer>
+
+  <!-- Chatbot -->
+  <button id="botFab" class="fab" title="Asistente SICE">🤖</button>
+  <aside id="bot" class="bot" hidden>
+    <div class="bot-h"><b>Asistente SICE</b><button id="botX">✕</button></div>
+    <div id="botMsgs" class="bot-m"></div>
+    <form id="botForm" class="bot-f"><input id="botIn" placeholder="Pregunta sobre juzgados o leyes…" autocomplete="off"><button class="btn-s">Enviar</button></form>
+  </aside>
+  <div id="toast" class="toast"><b>Simulador Académico</b><span>Este sistema es un simulador con fines puramente académicos. Los nombres han sido anonimizados. No es la web oficial del Poder Judicial.</span><button onclick="this.parentNode.remove()">✕</button></div>
+
+<!-- ===== MODAL VISOR PDF INTEGRADO ===== -->
+<div id="modalPdf" class="pdf-modal-overlay" hidden>
+  <div class="pdf-modal-card">
+    <div class="pdf-modal-header">
+      <div class="pdf-modal-title-box">
+        <span class="pdf-icon">📄</span>
+        <span class="pdf-modal-title" id="pdfModalTitle">Visor de Documento</span>
+      </div>
+      <div class="pdf-modal-actions">
+        <a id="pdfModalLinkExt" href="#" target="_blank" rel="noopener" class="pdf-btn-action" title="Abrir en pestaña nueva">
+          ↗ Pestaña nueva
+        </a>
+        <button type="button" class="pdf-btn-close" id="btnCerrarPdf">✕ Cerrar</button>
+      </div>
+    </div>
+    <div class="pdf-modal-body">
+      <iframe id="pdfModalIframe" class="pdf-iframe" src="" allow="autoplay"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="pdf_storage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+[
+  {
+    "codigo": "00203-2025-0-2101-JP-FC-01",
+    "sec": "00203",
+    "anio": "2025",
+    "org": "0",
+    "dist": "2101",
+    "inst": "JP",
+    "esp": "FC",
+    "corr": "01",
+    "reporte": {
+      "organoJurisdiccional": "1ER JUZGADO DE PAZ LETRADO - SEDE PUNO",
+      "distritoJudicial": "PUNO",
+      "juez": "MARY ****** / ELVER ******",
+      "especialistaLegal": "DIANA ******",
+      "fechaInicio": "24/01/2025",
+      "proceso": "PROCESO SIMPLIFICADO VIRTUAL DE ALIMENTOS",
+      "especialidad": "FAMILIA CIVIL",
+      "estado": "EN EJECUCION / RES JUDICATA",
+      "observacion": "Expediente con estado procesal final. Cuenta Banco Nacion 04-192-193325.",
+      "materia": "ALIMENTOS",
+      "etapaProcesal": "EJECUCION",
+      "ubicacion": "JUZGADO",
+      "sumilla": "DEMANDA DE ALIMENTOS (S/ 1,000.00)",
+      "fechaConclusion": "26/09/2025",
+      "motivoConclusion": "SENTENCIA CONSENTIDA"
+    },
+    "progreso": {
+      "porcentaje": 95,
+      "mensaje": "El proceso tiene la autoridad de cosa juzgada y se encuentra en etapa de ejecucion.",
+      "etapas": [
+        {
+          "nombre": "Calificacion de Demanda",
+          "desc": "Revision de admisibilidad y requisitos de procedencia.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Saneamiento y Audiencia (Unica)",
+          "desc": "Saneamiento, conciliacion, fijacion de puntos controvertidos y actuacion de medios probatorios.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Sentencia",
+          "desc": "Emision del fallo que resuelve el fondo del conflicto.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Impugnaciones (Nulidad)",
+          "desc": "Rechazo de recursos impugnatorios.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Ejecucion",
+          "desc": "Cumplimiento de lo dispuesto en la sentencia firme.",
+          "estado": "current"
+        }
+      ],
+      "hitos": [
+        {
+          "fecha": "24/01/2025",
+          "descripcion": "Presentacion de Demanda"
+        },
+        {
+          "fecha": "27/01/2025",
+          "descripcion": "Auto Admisorio (Res. 01)"
+        },
+        {
+          "fecha": "28/03/2025",
+          "descripcion": "Audiencia Unica"
+        },
+        {
+          "fecha": "31/03/2025",
+          "descripcion": "Sentencia (Res. 08) - Fija pension S/ 1,000.00"
+        },
+        {
+          "fecha": "18/07/2025",
+          "descripcion": "Rechazo de Nulidad (Res. 12)"
+        },
+        {
+          "fecha": "26/09/2025",
+          "descripcion": "Sentencia Consentida (Res. 13)"
+        }
+      ]
+    },
+    "partes": [
+      {
+        "rol": "DEMANDADO",
+        "tipoPers": "NATURAL",
+        "apellidoPaterno": "******",
+        "apellidoMaterno": "******",
+        "nombres": "FRANC ******"
+      },
+      {
+        "rol": "DEMANDANTE",
+        "tipoPers": "NATURAL",
+        "apellidoPaterno": "******",
+        "apellidoMaterno": "******",
+        "nombres": "ALEURELIA ******"
+      }
+    ],
+    "actuaciones": [
+      {
+        "numero": 18,
+        "fecha": "26/09/2025",
+        "acto": "RESOLUCIÓN N° 13",
+        "sumilla": "DECLARA CONSENTIDA LA SENTENCIA FAMILIA N° 60-2025 — ADQUIERE CALIDAD DE COSA JUZGADA.",
+        "responsable": "ELVER ******",
+        "pdfUrl": "https://drive.google.com/file/d/125s_hP1FWs02oQq1d-tjZS5ItxM1fITQ/preview",
+        "docs": [],
+        "cedulas": [
+          {
+            "numero": "77018",
+            "parte": "DEMANDANTE",
+            "destinatario": "ALEURELIA ******",
+            "fechaEnvio": "30/09/2025 09:15",
+            "formaEntrega": "CASILLA ELECTRÓNICA",
+            "pdfUrl": "https://drive.google.com/file/d/1AMC5ryNHOt4dfC0kA-A_mxQfZnADPpOQ/preview"
+          },
+          {
+            "numero": "77019",
+            "parte": "DEMANDADO",
+            "destinatario": "FRANC ******",
+            "fechaEnvio": "30/09/2025 09:16",
+            "formaEntrega": "CASILLA ELECTRÓNICA",
+            "pdfUrl": "https://drive.google.com/file/d/1RMpQhIjBjmVJB0VFVMwNDOJSW883XZZA/preview"
+          }
+        ]
+      },
+      {
+        "numero": 17,
+        "fecha": "04/09/2025",
+        "acto": "ESCRITO N° 38276-2025",
+        "sumilla": "SOLICITO SE DECLARE CONSENTIDA LA SENTENCIA FAMILIA N° 60-2025.",
+        "responsable": "IOSEF ******",
+        "pdfUrl": "https://drive.google.com/file/d/1eepdobh5N1rrendSfzJFjf6ZuiQLblsA/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 16,
+        "fecha": "25/07/2025",
+        "acto": "CONSTANCIA DE RECEPCIÓN",
+        "sumilla": "CONSTANCIA DE RECEPCIÓN DE ANEXOS.",
+        "responsable": "MESA DE PARTES",
+        "pdfUrl": "https://drive.google.com/file/d/1OgQf87z5zzOMhpDdWW942bsTeNZt0_Bt/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 15,
+        "fecha": "10/07/2025",
+        "acto": "RESOLUCIÓN N° 12",
+        "sumilla": "DECLARA IMPROCEDENTE LA NULIDAD; DISPONE NOTIFICAR AL DEMANDADO CON COPIA DE LA SENTENCIA.",
+        "responsable": "NORKA ******",
+        "pdfUrl": "https://drive.google.com/file/d/1x-mgJUUQdig6arcxcY_jwmqi14B2hBTN/preview",
+        "docs": [],
+        "cedulas": [
+          {
+            "numero": "56593",
+            "parte": "DEMANDANTE",
+            "destinatario": "ALEURELIA ******",
+            "fechaEnvio": "16/07/2025 11:20",
+            "formaEntrega": "CASILLA ELECTRÓNICA",
+            "pdfUrl": "https://drive.google.com/file/d/16eNDSW05Z7dOniktVyGf2nadvvOVinjH/preview"
+          },
+          {
+            "numero": "56595",
+            "parte": "DEMANDADO",
+            "destinatario": "FRANC ******",
+            "fechaEnvio": "16/07/2025 11:21",
+            "formaEntrega": "CASILLA ELECTRÓNICA (ADJUNTA SENTENCIA)",
+            "pdfUrl": "https://drive.google.com/file/d/1jIg84AQOoq_OdM1Jnejo6eHkogbSt1rV/preview"
+          }
+        ]
+      },
+      {
+        "numero": 14,
+        "fecha": "26/06/2025",
+        "acto": "RESOLUCIÓN N° 11",
+        "sumilla": "TÉNGASE POR ABSUELTO EL TRASLADO; PASAN AUTOS A DESPACHO PARA RESOLVER.",
+        "responsable": "DIANA ******",
+        "pdfUrl": "https://drive.google.com/file/d/1HcnWWbbrhUdymNSRxZQL_blC2zGVUQYj/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 13,
+        "fecha": "13/06/2025",
+        "acto": "ESCRITO N° 24536-2025",
+        "sumilla": "ABSOLUCIÓN DE NULIDAD. SOLICITA SE DECLARE IMPROCEDENTE.",
+        "responsable": "IOSEF ******",
+        "pdfUrl": "https://drive.google.com/file/d/1MydX9jMx0_F8yuXc5_AApA1zrsh5eXD5/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 12,
+        "fecha": "30/05/2025",
+        "acto": "RESOLUCIÓN N° 09 (SUBSANADA) Y N° 10",
+        "sumilla": "ADMITE LA NULIDAD SUBSANADA Y CORRE TRASLADO POR 3 DÍAS A LA DEMANDANTE.",
+        "responsable": "NORKA ******",
+        "pdfUrl": "https://drive.google.com/file/d/1RTYQNQ9dR66uLV4xRxIQuN4znXUGuMVx/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 11,
+        "fecha": "21/05/2025",
+        "acto": "ESCRITO N° 19742-2025",
+        "sumilla": "RESPUESTA AL OFICIO DEL JUZGADO (EMPRESA KOMATSU-MITSUI).",
+        "responsable": "LUIS ******",
+        "pdfUrl": "https://drive.google.com/file/d/1XD8vtdn-GI04bf5oDBzSi9fkvETLo4Qa/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 10,
+        "fecha": "20/05/2025",
+        "acto": "ESCRITO N° 19468-2025",
+        "sumilla": "ADJUNTA TASAS JUDICIALES (ARANCEL NULIDAD Y NOTIFICACIONES).",
+        "responsable": "FRANC ******",
+        "pdfUrl": "https://drive.google.com/file/d/1FflausH1mn8sN5nkiht4lJj-5nXWsh0O/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 9,
+        "fecha": "19/05/2025",
+        "acto": "RESOLUCIÓN N° 09",
+        "sumilla": "DECLARA INADMISIBLE LA NULIDAD E INAPLAZA PLAZO PARA SUBSANAR.",
+        "responsable": "NORKA ******",
+        "pdfUrl": "https://drive.google.com/file/d/11p7BthkjcqI6OO4cDzCTnpL1sRft1cCY/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 8,
+        "fecha": "07/05/2025",
+        "acto": "ESCRITO N° 17300-2025",
+        "sumilla": "NULIDAD DE TODO LO ACTUADO (PRESENTADO SIN ARANCEL).",
+        "responsable": "CÉSAR ******",
+        "pdfUrl": "https://drive.google.com/file/d/1OiayikwcwP1codfzbqh930ogxE6Bn8hm/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 7,
+        "fecha": "31/03/2025",
+        "acto": "RESOLUCIÓN N° 08 (SENTENCIA FAMILIA N° 60)",
+        "sumilla": "DECLARA FUNDADA LA DEMANDA Y FIJA PENSIÓN ALIMENTICIA EN S/ 1,000.00 MENSUALES.",
+        "responsable": "MARY ******",
+        "pdfUrl": "https://drive.google.com/file/d/1oXSrTPqt_iOsNA58SjFXDj1DYlOWAfWz/preview",
+        "docs": [],
+        "cedulas": [
+          {
+            "numero": "21350",
+            "parte": "DEMANDANTE",
+            "destinatario": "ALEURELIA ******",
+            "fechaEnvio": "31/03/2025 15:45",
+            "formaEntrega": "CASILLA ELECTRÓNICA",
+            "pdfUrl": "https://drive.google.com/file/d/1YH-zKnnwUS-uVnsMceRtseywlsgP6zlB/preview"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "fecha": "31/03/2025",
+        "acto": "RESOLUCIÓN N° 07",
+        "sumilla": "PRESCINDE DEL MEDIO PROBATORIO RENIEC Y ORDENA DICTAR SENTENCIA.",
+        "responsable": "MARY ******",
+        "pdfUrl": "https://drive.google.com/file/d/1eJxFWGQ2nMXIfHEn6bOwTqFNAHZienmD/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 5,
+        "fecha": "24/03/2025",
+        "acto": "RESOLUCIÓN N° 06",
+        "sumilla": "DE OFICIO: AGUARDA INFORME DE RENIEC ANTES DE SENTENCIAR.",
+        "responsable": "MARY ******",
+        "pdfUrl": "https://drive.google.com/file/d/1GTsfeU_A2J4QHkxFbtL-tZnSaCgLym76/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 4,
+        "fecha": "20/03/2025",
+        "acto": "ACTA DE AUDIENCIA ÚNICA (RES 3, 4 Y 5)",
+        "sumilla": "REBELDÍA DEL DEMANDADO, SANEAMIENTO PROCESAL Y ADMISIÓN DE MEDIOS PROBATORIOS.",
+        "responsable": "MARY ******",
+        "pdfUrl": "https://drive.google.com/file/d/1gYu4waCqKJZ5ShKGVb-UJuGH7yl9cwiR/preview",
+        "docs": [],
+        "cedulas": []
+      },
+      {
+        "numero": 3,
+        "fecha": "11/03/2025",
+        "acto": "CARTA BANCO DE LA NACIÓN + RES N° 02",
+        "sumilla": "APERTURA CUENTA BN 04-192-193325 Y RESOLUCIÓN 02 PONIÉNDOLA EN CONOCIMIENTO.",
+        "responsable": "DIANA ******",
+        "pdfUrl": "https://drive.google.com/file/d/1JbPrywKol2o2OaqPpLJCKnVfNtMPE_8-/preview",
+        "docs": [
+          {
+            "label": "Carta BN",
+            "url": "https://drive.google.com/file/d/1JbPrywKol2o2OaqPpLJCKnVfNtMPE_8-/preview"
+          },
+          {
+            "label": "Res. N° 02",
+            "url": "https://drive.google.com/file/d/1HDkBx2K9kvnCYEsA4R9Z6cUt8HNJRPeA/preview"
+          }
+        ],
+        "cedulas": []
+      },
+      {
+        "numero": 2,
+        "fecha": "27/01/2025",
+        "acto": "OFICIOS GIRADOS (RENIEC Y BN)",
+        "sumilla": "OFICIOS SOLICITANDO INFORME A RENIEC Y APERTURA DE CUENTA EN BANCO DE LA NACIÓN.",
+        "responsable": "NORKA ******",
+        "pdfUrl": "https://drive.google.com/file/d/1sVIGsK7oSd2mOPqDXq0qqLIXwuWdEp8y/preview",
+        "docs": [
+          {
+            "label": "Oficio RENIEC",
+            "url": "https://drive.google.com/file/d/1sVIGsK7oSd2mOPqDXq0qqLIXwuWdEp8y/preview"
+          },
+          {
+            "label": "Oficio BN",
+            "url": "https://drive.google.com/file/d/1w1RjhmLQRdFlrftDuzaZkxsXaivlba3F/preview"
+          }
+        ],
+        "cedulas": []
+      },
+      {
+        "numero": 1,
+        "fecha": "27/01/2025",
+        "acto": "RESOLUCIÓN N° 01 (AUTO ADMISORIO)",
+        "sumilla": "ADMITE LA DEMANDA DE ALIMENTOS Y FIJA ASIGNACIÓN ANTICIPADA DE OFICIO.",
+        "responsable": "NORKA ******",
+        "pdfUrl": "https://drive.google.com/file/d/12SKVA9ixdT9D3dtnvYMdiB71W7UGPqsK/preview",
+        "docs": [],
+        "cedulas": []
+      }
+    ]
+  },
+  {
+    "codigo": "00417-2024-0-2101-JR-CI-02",
+    "sec": "00417",
+    "anio": "2024",
+    "org": "0",
+    "dist": "2101",
+    "inst": "JR",
+    "esp": "CI",
+    "corr": "02",
+    "reporte": {
+      "organoJurisdiccional": "JUZGADO ESPECIALIZADO CIVIL - PUNO",
+      "distritoJudicial": "PUNO",
+      "juez": "JUEZA L. CALLA T.",
+      "especialistaLegal": "ESPECIALISTA A.",
+      "fechaInicio": "10/05/2024",
+      "proceso": "PROCESO UNICO DE EJECUCION",
+      "especialidad": "CIVIL",
+      "estado": "EN EJECUCION",
+      "observacion": "Expediente en etapa de ejecucion de sentencia.",
+      "materia": "OBLIGACION DE DAR SUMA DE DINERO",
+      "etapaProcesal": "EJECUCION",
+      "ubicacion": "JUZGADO",
+      "sumilla": "COBRO DE S/ 25,000.00",
+      "fechaConclusion": "",
+      "motivoConclusion": ""
+    },
+    "progreso": {
+      "porcentaje": 80,
+      "mensaje": "El proceso se encuentra en etapa de ejecucion de sentencia.",
+      "etapas": [
+        {
+          "nombre": "Admision de Demanda",
+          "desc": "Revision y admision de la demanda ejecutiva.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Contradiccion",
+          "desc": "Plazo para que el ejecutado formule contradiccion.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Sentencia",
+          "desc": "Resolucion que declara fundada la demanda.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Ejecucion",
+          "desc": "Cumplimiento forzado del mandato de pago.",
+          "estado": "current"
+        }
+      ],
+      "hitos": [
+        {
+          "fecha": "10/05/2024",
+          "descripcion": "Admision a tramite de la demanda (Res. 01)"
+        },
+        {
+          "fecha": "02/12/2024",
+          "descripcion": "Sentencia que declara fundada la demanda (Res. 05)"
+        }
+      ]
+    },
+    "partes": [
+      {
+        "rol": "DEMANDANTE",
+        "tipoPers": "JURIDICA",
+        "apellidoPaterno": "COMERCIAL ANDINA S.A.C.",
+        "apellidoMaterno": "",
+        "nombres": ""
+      },
+      {
+        "rol": "DEMANDADO",
+        "tipoPers": "NATURAL",
+        "apellidoPaterno": "APAZA",
+        "apellidoMaterno": "LIMACHI",
+        "nombres": "FRANCISCO"
+      }
+    ],
+    "actuaciones": [
+      {
+        "numero": 2,
+        "fecha": "02/12/2024",
+        "acto": "SENTENCIA (Res. 05)",
+        "sumilla": "Se declara FUNDADA la demanda ejecutiva. Mandato de pago por S/ 25,000.00.",
+        "responsable": "JUEZA L. CALLA T.",
+        "pdfUrl": "https://drive.google.com/file/d/1oXSrTPqt_iOsNA58SjFXDj1DYlOWAfWz/preview",
+        "cedulas": [
+          {
+            "numero": "34102",
+            "parte": "DEMANDADO",
+            "destinatario": "APAZA LIMACHI FRANCISCO",
+            "fechaEnvio": "05/12/2024 10:20",
+            "formaEntrega": "CASILLA ELECTRÓNICA",
+            "pdfUrl": "https://drive.google.com/file/d/1YH-zKnnwUS-uVnsMceRtseywlsgP6zlB/preview"
+          }
+        ]
+      },
+      {
+        "numero": 1,
+        "fecha": "10/05/2024",
+        "acto": "RESOLUCION NRO. 01",
+        "sumilla": "Se admite a tramite la demanda ejecutiva y se requiere al ejecutado el pago bajo apercibimiento.",
+        "responsable": "JUEZA L. CALLA T.",
+        "pdfUrl": "https://drive.google.com/file/d/12SKVA9ixdT9D3dtnvYMdiB71W7UGPqsK/preview",
+        "cedulas": []
+      }
+    ]
+  }
+]
