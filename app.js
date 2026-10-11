@@ -1,11 +1,18 @@
-/* ================================================================
+﻿/* ================================================================
    SICE - app.js
    Base de datos: data/expedientes.json (GitHub Pages friendly)
 ================================================================ */
 
 /* ===== CONSTANTES LOCALES ===== */
 const DIST   = { PUNO:"2101", LIMA:"1801", AREQUIPA:"0401", CUSCO:"0701" };
-const INST   = { JP:"JUZGADO DE PAZ LETRADO", JR:"JUZGADO ESPECIALIZADO", SP:"SALA SUPERIOR" };
+const INST   = {
+  "JUZGADO DE TRABAJO": "JUZGADO DE TRABAJO",
+  "JUZGADO ESPECIALIZADO": "JUZGADO ESPECIALIZADO",
+  "JUZGADO PENAL": "JUZGADO PENAL",
+  "JUZGADO CIVIL": "JUZGADO CIVIL",
+  "JUZGADO DE PAZ LETRADO": "JUZGADO DE PAZ LETRADO",
+  "SALA SUPERIOR": "SALA SUPERIOR"
+};
 const ESP    = { FC:"FAMILIA CIVIL", CI:"CIVIL", PE:"PENAL", LA:"LABORAL", CO:"COMERCIAL" };
 const ESTADOS = ["EN TRAMITE","EN EJECUCION","CONCLUIDO","ARCHIVADO","EN EJECUCION / RES JUDICATA"];
 const ADMIN_USER = "harry";
@@ -22,6 +29,399 @@ const cod = x => [x.sec,x.anio,x.org,x.dist,x.inst,x.esp,x.corr].join("-");
 /* ===== BASE DE DATOS INTEGRADA ===== */
 // Datos base siempre disponibles (funciona sin servidor)
 const BASE_EXPS = [
+  {
+    "codigo": "00957-2022-0-2111-JR-LA-01",
+    "expedienteCompletoUrl": "expedientes/957-2022.pdf",
+    "reporte": {
+      "numero": "00957-2022-0-2111-JR-LA-01",
+      "distritoJudicial": "PUNO",
+      "organoJurisdiccional": "Juzgado de Trabajo - Zona Norte - Sede Juliaca",
+      "sede": "Plaza Zarumilla S/N - Jr. Pumacahua Nº 223 - Juliaca",
+      "juez": "HUAMAN ROMERO GONZALO VICTOR / ALE POLAR RAUL",
+      "especialista": "LEA CALDERON ARAPA / CHAMBI RODRIGUEZ JOHAN MAX",
+      "especialidad": "LABORAL",
+      "subespecialidad": "LABORAL (NLPT)",
+      "proceso": "ORDINARIO LABORAL",
+      "materia": "DESNATURALIZACIÓN DE CONTRATO",
+      "estado": "CONCLUIDO",
+      "etapaProcesal": "SENTENCIA FIRME (ARCHIVO DEFINITIVO)",
+      "fechaInicio": "02/09/2022",
+      "cuantia": "S/ 0.00 (INDETERMINADA)",
+      "ubicacion": "ARCHIVO MODULAR / EN RESERVA",
+      "sumilla": "DEMANDA LABORAL SOBRE DESNATURALIZACIÓN DE CONTRATOS DE TERCERIZACIÓN Y REPOSICIÓN POR DESPIDO INCAUSADO"
+    },
+    "resumen": "Este es un proceso laboral de desnaturalización de contrato de tercerización laboral y reposición, donde un extrabajador demanda a la empresa principal (Electro Puno S.A.A.) y a diversas empresas contratistas (Consorcio Galcas Sur, Fegal S.R.L., Galcas Contratistas Generales S.A.C. y Voltec Contratistas Generales S.R.L.), alegando que prestó servicios personales y subordinados durante varios años (desde 2016) bajo la apariencia de contratos de tercerización y recibos por honorarios, configurándose un despido incausado. El proceso inició con una demanda declarada inadmisible, luego subsanada, admitida a trámite, con el desarrollo de la audiencia de conciliación y la audiencia de juzgamiento. En la Sentencia N.° 59-2023-LA (Resolución N.° 04), el Juzgado Especializado de Trabajo declaró infundada la excepción de caducidad e infundada en todos sus extremos la demanda, disponiendo el archivo definitivo del proceso sin costas ni costos.",
+    "situacionResolutiva": {
+      "titulo": "SENTENCIA INFUNDADA",
+      "detalle": "En la Sentencia N.° 59-2023-LA (Resolución N.° 04), el Juzgado Especializado de Trabajo declaró infundada la excepción de caducidad e infundada en todos sus extremos la demanda, estableciendo que el demandante no logró acreditar haber estado bajo la subordinación directa de la empresa principal Electro Puno S.A.A. ni demostró la desnaturalización de los contratos de tercerización comercial, disponiendo el archivo definitivo del proceso sin costas ni costos."
+    },
+    "partes": [
+      {
+        "tipo": "DEMANDANTE",
+        "nombres": "CHOQUE TICONA, WILSON RONALD",
+        "tipoPersona": "NATURAL",
+        "representante": "Yhon Cristhian Barrionuevo Monzón (Abogado Defensor, Reg. CAP N° 6994)"
+      },
+      {
+        "tipo": "DEMANDADO",
+        "nombres": "EMPRESA REGIONAL DE SERVICIO PUBLICO DE ELECTRICIDAD DE PUNO S.A.A. (ELECTRO PUNO S.A.A.)",
+        "tipoPersona": "JURÍDICA",
+        "representante": "Abg. Priscilla Marisha Barrientos Tejada (Abogada Apoderada, Reg. CAA N° 6255)"
+      },
+      {
+        "tipo": "DEMANDADO",
+        "nombres": "CONSORCIO GALCAS SUR",
+        "tipoPersona": "JURÍDICA",
+        "representante": "Representante Legal no apersonado (Declarado rebelde / Inasistente)"
+      },
+      {
+        "tipo": "DEMANDADO",
+        "nombres": "GALCAS CONTRATISTAS GENERALES S.A.C.",
+        "tipoPersona": "JURÍDICA",
+        "representante": "Representante Legal no apersonado"
+      },
+      {
+        "tipo": "DEMANDADO",
+        "nombres": "FEGAL SOCIEDAD COMERCIAL DE RESPONSABILIDAD LIMITADA (FEGAL S.R.L.)",
+        "tipoPersona": "JURÍDICA",
+        "representante": "Representante Legal no apersonado"
+      },
+      {
+        "tipo": "DEMANDADO",
+        "nombres": "VOLTEC CONTRATISTAS GENERALES SOCIEDAD COMERCIAL DE RESPONSABILIDAD LIMITADA (VOLTEC S.R.L.)",
+        "tipoPersona": "JURÍDICA",
+        "representante": "Representante Legal no apersonado"
+      }
+    ],
+    "progreso": {
+      "porcentaje": 80,
+      "mensaje": "El proceso cuenta con Sentencia N.° 59-2023-LA emitida que declara infundada la demanda laboral.",
+      "etapas": [
+        {
+          "nombre": "DEMANDA",
+          "desc": "02/09/2022 - Presentación de la demanda laboral sobre desnaturalización y reposición.",
+          "estado": "done",
+          "fecha": "02/09/2022"
+        },
+        {
+          "nombre": "CALIFICACIÓN",
+          "desc": "20/09/2022 - Calificación y auto admisorio (Res. N° 02) tras subsanación de observaciones.",
+          "estado": "done",
+          "fecha": "20/09/2022"
+        },
+        {
+          "nombre": "CONTESTACIÓN",
+          "desc": "22/11/2022 - Contestación de demanda por Electro Puno S.A.A. con excepción de caducidad.",
+          "estado": "done",
+          "fecha": "22/11/2022"
+        },
+        {
+          "nombre": "AUDIENCIA",
+          "desc": "10/05/2023 - Audiencia de juzgamiento reanudada con confrontación de posiciones y alegatos.",
+          "estado": "done",
+          "fecha": "10/05/2023"
+        },
+        {
+          "nombre": "SENTENCIA 1RA INST.",
+          "desc": "12/05/2023 - Sentencia N.° 59-2023-LA (Res. N° 04) que declara infundada la excepción y la demanda.",
+          "estado": "current",
+          "fecha": "12/05/2023"
+        },
+        {
+          "nombre": "APELACIÓN",
+          "desc": "Plazo de ley para recurso impugnatorio de apelación.",
+          "estado": "pending",
+          "fecha": ""
+        },
+        {
+          "nombre": "SALA SUPERIOR",
+          "desc": "Elevación a Sala Laboral de la Corte Superior de Justicia de Puno.",
+          "estado": "pending",
+          "fecha": ""
+        }
+      ],
+      "hitos": [
+        {
+          "fecha": "02/09/2022",
+          "descripcion": "DEMANDA: Presentación de la demanda laboral"
+        },
+        {
+          "fecha": "05/09/2022",
+          "descripcion": "INADMISIBILIDAD: Resolución N° 01 - observaciones de forma"
+        },
+        {
+          "fecha": "15/09/2022",
+          "descripcion": "SUBSANACIÓN: Presentación de escrito y anexos subsanando observaciones"
+        },
+        {
+          "fecha": "20/09/2022",
+          "descripcion": "ADMISIÓN: Resolución N° 02 - admisión y citación a conciliación"
+        },
+        {
+          "fecha": "30/09/2022",
+          "descripcion": "APERSONAMIENTO: Apersonamiento de Electro Puno y pago de tasas"
+        },
+        {
+          "fecha": "22/11/2022",
+          "descripcion": "CONTESTACIÓN: Contestación de demanda de Electro Puno con excepción de caducidad"
+        },
+        {
+          "fecha": "22/11/2022",
+          "descripcion": "AUDIENCIA DE CONCILIACIÓN: Fracasada por inasistencia de contratistas"
+        },
+        {
+          "fecha": "02/12/2022",
+          "descripcion": "OFICIO: Requerimiento de exhibición documental a Electro Puno S.A.A."
+        },
+        {
+          "fecha": "16/12/2022",
+          "descripcion": "EXHIBICIONES: Presentación de medios probatorios por Electro Puno"
+        },
+        {
+          "fecha": "02/01/2023",
+          "descripcion": "SOLICITUD: Copias certificadas solicitadas por el demandante"
+        },
+        {
+          "fecha": "04/01/2023",
+          "descripcion": "RESOLUCIÓN N° 03: Expedición de copias y asunción del Juez Raúl Ale Polar"
+        },
+        {
+          "fecha": "16/03/2023",
+          "descripcion": "AUDIENCIA DE JUZGAMIENTO: Suspendida por falta de cédulas físicas"
+        },
+        {
+          "fecha": "10/05/2023",
+          "descripcion": "AUDIENCIA DE JUZGAMIENTO: Reanudada, actuación probatoria y alegatos"
+        },
+        {
+          "fecha": "12/05/2023",
+          "descripcion": "SENTENCIA N° 59-2023-LA: Declara infundada la excepción y la demanda"
+        }
+      ]
+    },
+    "actuaciones": [
+      {
+        "numero": 1,
+        "fecha": "02/09/2022",
+        "acto": "INTERPONE DEMANDA LABORAL",
+        "sumilla": "El demandante interpone formalmente una demanda laboral sobre desnaturalización de contrato de tercerización laboral y reposición contra Electro Puno S.A.A. y otras empresas contratistas.",
+        "responsable": "MESA DE PARTES / LEA CALDERON ARAPA",
+        "pdfUrl": "expedientes/1 DEMANDA Y ANEXOS 1-658_261010_092318.pdf",
+        "docs": [
+          {
+            "label": "Demanda y Anexos (Fojas 1-658)",
+            "url": "expedientes/1 DEMANDA Y ANEXOS 1-658_261010_092318.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "fecha": "05/09/2022",
+        "acto": "INADMISIBILIDAD DE DEMANDA (RESOLUCIÓN N° 01)",
+        "sumilla": "El Juzgado de Trabajo declara inadmisible la demanda debido a que se advirtieron omisiones de carácter subsanable respecto a los anexos, otorgando un plazo de cinco días para corregirlas bajo apercibimiento de ordenar el archivo del expediente.",
+        "responsable": "HUAMAN ROMERO GONZALO VICTOR / LEA CALDERON ARAPA",
+        "pdfUrl": "expedientes/2 AUTO QUE DECLARA INADMISIBLE LA DEMANDA.pdf",
+        "docs": [
+          {
+            "label": "Resolución N° 01 (Auto Inadmisible)",
+            "url": "expedientes/2 AUTO QUE DECLARA INADMISIBLE LA DEMANDA.pdf"
+          },
+          {
+            "label": "Cédula de Notificación",
+            "url": "expedientes/2.1 AUTO QUE DECLARA INADMISIBLE LA DEMANDA.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "fecha": "15/09/2022",
+        "acto": "SUBSANACIÓN DE OBSERVACIONES",
+        "sumilla": "El demandante presenta escrito subsanando las observaciones advertidas por el juzgado, precisando los periodos correctos de los registros de capacitación y adjuntando medio digital con videos y fotografías probatorias.",
+        "responsable": "LEA CALDERON ARAPA",
+        "pdfUrl": "expedientes/3 SUBSANA OBSERVACIONES DE LA DEMANDA 661-664_261010_115347.pdf",
+        "docs": [
+          {
+            "label": "Escrito de Subsanación (Fojas 661-664)",
+            "url": "expedientes/3 SUBSANA OBSERVACIONES DE LA DEMANDA 661-664_261010_115347.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "fecha": "20/09/2022",
+        "acto": "ADMISIÓN DE DEMANDA (RESOLUCIÓN N° 02)",
+        "sumilla": "El órgano jurisdiccional califica positivamente la demanda tras verificar el cumplimiento de los requisitos legales, admitiéndola a trámite en la vía del proceso ordinario laboral y citando a las partes a audiencia de conciliación virtual para el 22/11/2022.",
+        "responsable": "HUAMAN ROMERO GONZALO VICTOR / LEA CALDERON ARAPA",
+        "pdfUrl": "expedientes/4 AUTO QUE ADMITE DEMANDA RES 2 957-2022-665-668_261010_115630.pdf",
+        "docs": [
+          {
+            "label": "Resolución N° 02 (Auto Admisorio)",
+            "url": "expedientes/4 AUTO QUE ADMITE DEMANDA RES 2 957-2022-665-668_261010_115630.pdf"
+          },
+          {
+            "label": "Cédula de Notificación N° 21043-2022",
+            "url": "expedientes/4.4. NOTIFICACIÓN DE RES 2 669 - 672_261010_120203.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "fecha": "30/09/2022",
+        "acto": "APERSONAMIENTO Y CUMPLO REQUERIMIENTO",
+        "sumilla": "La empresa principal Electro Puno S.A.A., a través de su apoderada Abg. Priscilla Barrientos Tejada, se apersona formalmente al proceso, señala domicilio procesal, casilla electrónica N° 6255 y proporciona datos de contacto conforme al requerimiento judicial.",
+        "responsable": "CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/5 APERSONAMIENTO Y CUMPLO REQUERIMIENTO 674-682_261010_120756.pdf",
+        "docs": [
+          {
+            "label": "Escrito de Apersonamiento (Fojas 674-682)",
+            "url": "expedientes/5 APERSONAMIENTO Y CUMPLO REQUERIMIENTO 674-682_261010_120756.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "fecha": "22/11/2022",
+        "acto": "CONTESTACIÓN DE DEMANDA Y EXCEPCIÓN DE CADUCIDAD",
+        "sumilla": "La empresa principal Electro Puno S.A.A. contesta formalmente la demanda solicitando que sea declarada infundada en todos sus extremos y deduce excepción de caducidad, sosteniendo la validez de los contratos de tercerización y que el demandante nunca estuvo subordinado.",
+        "responsable": "CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/6 CONTESTACION DE LA DEMANDA 683-692_261010_122209.pdf",
+        "docs": [
+          {
+            "label": "Contestación de Demanda (Fojas 683-692)",
+            "url": "expedientes/6 CONTESTACION DE LA DEMANDA 683-692_261010_122209.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "fecha": "22/11/2022",
+        "acto": "ACTA DE REGISTRO DE AUDIENCIA DE CONCILIACIÓN",
+        "sumilla": "Se lleva a cabo la audiencia virtual ante el Juez Wilber Paredes Jaén con la presencia del demandante y Electro Puno S.A.A. (dejándose constancia de la inasistencia de las demás empresas codemandadas). Al no haber acuerdo, se da por fracasada la conciliación y se fijan las pretensiones materia de juicio.",
+        "responsable": "WILBER PAREDES JAEN / MONICA KAREN ROQUE QUISPE",
+        "pdfUrl": "expedientes/7 ACTA DE REGISTRO DE AUDIENCIA DE CONCILIACION 69_261010_122610.pdf",
+        "docs": [
+          {
+            "label": "Acta de Audiencia de Conciliación",
+            "url": "expedientes/7 ACTA DE REGISTRO DE AUDIENCIA DE CONCILIACION 69_261010_122610.pdf"
+          },
+          {
+            "label": "Cédula de Notificación N° 28369-2022",
+            "url": "expedientes/7.1 ACTA DE REGISTRO DE AUDIENCIA DE CONCILIACION _261010_122706.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "fecha": "02/12/2022",
+        "acto": "REQUERIMIENTO DE EXHIBICIÓN DOCUMENTAL (OFICIO N° 3262-2022)",
+        "sumilla": "El juzgado libra el Oficio N° 3262-2022-JET-MCL.ZN-CSJPU-PJ requiriendo al Gerente General de Electro Puno S.A.A. para que en el plazo de cinco días remita la totalidad de los documentos propuestos como medios probatorios y contratos suscritos.",
+        "responsable": "JUZGADO ESPECIALIZADO LABORAL / CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/8 Oficio de Requerimiento de Exhibición de Documen_261010_122812.pdf",
+        "docs": [
+          {
+            "label": "Oficio N° 3262-2022-JET Requerimiento",
+            "url": "expedientes/8 Oficio de Requerimiento de Exhibición de Documen_261010_122812.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "fecha": "16/12/2022",
+        "acto": "EXHIBICIONES DOCUMENTALES",
+        "sumilla": "La codemandada Electro Puno S.A.A. cumple con absolver el requerimiento presentando exhibiciones de documentos mediante enlace digital de almacenamiento en la nube, precisando antecedentes archivísticos.",
+        "responsable": "CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/9 EXHIBICIONES 699-703_261010_123056.pdf",
+        "docs": [
+          {
+            "label": "Escrito de Exhibiciones (Fojas 699-703)",
+            "url": "expedientes/9 EXHIBICIONES 699-703_261010_123056.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "fecha": "02/01/2023",
+        "acto": "SOLICITUD DE COPIAS CERTIFICADAS Y OTROS",
+        "sumilla": "La parte demandante presenta escrito solicitando al juzgado la expedición y entrega de copias certificadas de los actuados principales (demanda, anexos y auto admisorio) para los fines pertinentes de su derecho.",
+        "responsable": "CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/10 Solicito copias certificadas y otros 704-706_261010_123325.pdf",
+        "docs": [
+          {
+            "label": "Escrito de Solicitud de Copias (Fojas 704-706)",
+            "url": "expedientes/10 Solicito copias certificadas y otros 704-706_261010_123325.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 11,
+        "fecha": "04/01/2023",
+        "acto": "EXPEDICIÓN DE COPIAS Y ASUNCIÓN DE COMPETENCIA (RESOLUCIÓN N° 03)",
+        "sumilla": "El juzgado resuelve proveer la solicitud de copias certificadas disponiendo su expedición, y pone en conocimiento de las partes la asunción de competencia del despacho por parte del magistrado Raúl Ale Polar por disposición superior.",
+        "responsable": "ALE POLAR RAUL / CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/11 Resolución 3 707-719_261010_123405.pdf",
+        "docs": [
+          {
+            "label": "Resolución N° 03 (Asunción de Competencia)",
+            "url": "expedientes/11 Resolución 3 707-719_261010_123405.pdf"
+          },
+          {
+            "label": "Notificación y Cédulas N° 130-2023",
+            "url": "expedientes/11-1 Resolución 3 707-719_261010_124343.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 12,
+        "fecha": "16/03/2023",
+        "acto": "AUDIENCIA DE JUZGAMIENTO (SUSPENDIDA)",
+        "sumilla": "Al instalarse la audiencia, el juez advierte que no obran en el expediente físico las cédulas de notificación a las co-demandadas contratistas, por lo que dispone la suspensión y reprogramación de la diligencia, formulando llamado de atención al personal de trámite.",
+        "responsable": "RAUL ALE POLAR / MONICA KAREN ROQUE QUISPE",
+        "pdfUrl": "expedientes/12 ACTA DE REGISTRO DE AUDIENCIA DE JUZGAMIENTO 16_261010_124542.pdf",
+        "docs": [
+          {
+            "label": "Acta de Juzgamiento Suspendida",
+            "url": "expedientes/12 ACTA DE REGISTRO DE AUDIENCIA DE JUZGAMIENTO 16_261010_124542.pdf"
+          },
+          {
+            "label": "Cédula de Notificación N° 4635-2023",
+            "url": "expedientes/12.1 ACTA DE REGISTRO DE AUDIENCIA DE JUZGAMIENTO _261010_135915.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 13,
+        "fecha": "10/05/2023",
+        "acto": "AUDIENCIA DE JUZGAMIENTO (REANUDADA Y CONCLUIDA)",
+        "sumilla": "Se lleva a cabo la reanudación y conclusión de la audiencia de juzgamiento con la confrontación de posiciones, fijación de puntos controvertidos, admisión y actuación de pruebas (exhibiciones digitales) y recepción de alegatos finales de las partes.",
+        "responsable": "RAUL ALE POLAR / MONICA KAREN ROQUE QUISPE",
+        "pdfUrl": "expedientes/13 ACTA DE REGISTRO DE AUDIENCIA DE JUZGAMIENTO 10_261010_124920.pdf",
+        "docs": [
+          {
+            "label": "Acta de Juzgamiento Reanudada y Concluida",
+            "url": "expedientes/13 ACTA DE REGISTRO DE AUDIENCIA DE JUZGAMIENTO 10_261010_124920.pdf"
+          }
+        ]
+      },
+      {
+        "numero": 14,
+        "fecha": "12/05/2023",
+        "acto": "SENTENCIA N° 59-2023-LA (RESOLUCIÓN N° 04)",
+        "sumilla": "El Juzgado Especializado de Trabajo declara infundada la excepción de caducidad deducida por Electro Puno S.A.A. e INFUNDADA en todos sus extremos la demanda principal de desnaturalización y reposición, al no acreditarse subordinación directa con la principal ni desnaturalización de la tercerización. Ordena el archivo definitivo sin costas ni costos.",
+        "responsable": "RAUL ALE POLAR / CHAMBI RODRIGUEZ JOHAN MAX",
+        "pdfUrl": "expedientes/14 SENTENCIA N° 59 – 2023 – LA res 4 737-754_261010_125512.pdf",
+        "docs": [
+          {
+            "label": "Sentencia N° 59-2023-LA (Fojas 737-754)",
+            "url": "expedientes/14 SENTENCIA N° 59 – 2023 – LA res 4 737-754_261010_125512.pdf"
+          },
+          {
+            "label": "Cédula de Notificación N° 9194-2023",
+            "url": "expedientes/14.1 SENTENCIA N° 59 – 2023 – LA res 4 737-754_261010_125930.pdf"
+          }
+        ]
+      }
+    ]
+  },
   {
     "codigo": "00203-2025-0-2101-JP-FC-01",
     "sec": "00203",
@@ -472,472 +872,178 @@ const BASE_EXPS = [
         "cedulas": []
       }
     ]
+  },
+  {
+    "codigo": "00123-2023-0-2111-JR-PE-01",
+    "sec": "00123",
+    "anio": "2023",
+    "org": "0",
+    "dist": "2111",
+    "inst": "JR",
+    "esp": "PE",
+    "corr": "01",
+    "reporte": {
+      "organoJurisdiccional": "1° JUZGADO PENAL - PUNO",
+      "distritoJudicial": "PUNO",
+      "juez": "DR. RICARDO MAMANI CALIZAYA",
+      "especialistaLegal": "ESPECIALISTA PENAL",
+      "fechaInicio": "28/09/2023",
+      "proceso": "PROCESO PENAL COMÚN (NCPP)",
+      "especialidad": "PENAL",
+      "estado": "ACTIVO / CONCLUIDO",
+      "observacion": "Sentencia condenatoria en primera instancia.",
+      "materia": "ROBO AGRAVADO / ANULABILIDAD DE ACTO JURÍDICO",
+      "etapaProcesal": "JUZGAMIENTO",
+      "ubicacion": "JUZGADO PENAL",
+      "sumilla": "PROCESO PENAL POR ROBO AGRAVADO",
+      "fechaConclusion": "20/10/2025",
+      "motivoConclusion": "SENTENCIA CONDENATORIA"
+    },
+    "progreso": {
+      "porcentaje": 90,
+      "mensaje": "Se completó la etapa de pruebas y se expidió sentencia.",
+      "etapas": [
+        {
+          "nombre": "Demanda",
+          "desc": "Denuncia e investigación preparatoria.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Calificación",
+          "desc": "Control de acusación y auto de enjuiciamiento.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Contestación",
+          "desc": "Alegatos y defensa técnica.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Audiencia",
+          "desc": "Juicio oral y actuación de pruebas.",
+          "estado": "done"
+        },
+        {
+          "nombre": "Sentencia 1ra Inst.",
+          "desc": "Sentencia condenatoria.",
+          "estado": "current"
+        },
+        {
+          "nombre": "Apelación",
+          "desc": "Plazo para apelación de sentencia.",
+          "estado": "pending"
+        },
+        {
+          "nombre": "Sala Superior",
+          "desc": "Segunda instancia penal.",
+          "estado": "pending"
+        }
+      ],
+      "hitos": [
+        {
+          "fecha": "03/06/2025",
+          "descripcion": "Interposición de Demanda / Acusación"
+        },
+        {
+          "fecha": "18/06/2025",
+          "descripcion": "Calificación y Admisión"
+        },
+        {
+          "fecha": "09/07/2025",
+          "descripcion": "Contestación de la Acusación"
+        },
+        {
+          "fecha": "15/07/2025",
+          "descripcion": "Audiencia de Pruebas"
+        },
+        {
+          "fecha": "12/11/2025",
+          "descripcion": "Sentencia Condenatoria (Res. N° 023-2025)"
+        }
+      ]
+    },
+    "partes": [
+      {
+        "rol": "DEMANDANTE",
+        "tipoPers": "NATURAL",
+        "apellidoPaterno": "MAMANI",
+        "apellidoMaterno": "CALIZAYA",
+        "nombres": "RICARDO JUNIOR"
+      },
+      {
+        "rol": "DEMANDADO",
+        "tipoPers": "NATURAL",
+        "apellidoPaterno": "PEREZ",
+        "apellidoMaterno": "CARDENAS",
+        "nombres": "JUAN CAMILO"
+      }
+    ],
+    "resumen": "Este es un proceso civil de anulabilidad de acto jurídico por dolo, donde una madre demanda a su hijo y su pareja, alegando que fue engañada para firmar una compraventa de su inmueble creyendo que firmaba una hipoteca. El proceso inició con una demanda que fue declarada inadmisible, luego subsanada y finalmente admitida. El conflicto gira en torno al vicio de voluntad (dolo causante) y la posible invalidez de la compraventa.",
+    "situacion": {
+      "titulo": "SENTENCIA CONDENATORIA",
+      "detalle": "En la Resolución N.° 023-2025, el Juzgado Civil declaró fundada la demanda y estableció que la compraventa es anulable por dolo, al haberse viciado la voluntad de la demandante; en consecuencia, el contrato queda sin efecto, se declara infundada la tacha y la parte demandada asume costas y costos del proceso."
+    },
+    "actuaciones": [
+      {
+        "numero": 3,
+        "fecha": "12/11/2024",
+        "acto": "SENTENCIA (Resolución N° 023-2025)",
+        "sumilla": "SENTENCIA CONDENATORIA: DECLARA FUNDADA LA DEMANDA DE ANULABILIDAD POR DOLO.",
+        "responsable": "DR. RICARDO MAMANI CALIZAYA",
+        "pdfUrl": "https://drive.google.com/file/d/1vHs8SgtY-j73LSvYb62PUZXulgHQKsGX/preview",
+        "cedulas": []
+      },
+      {
+        "numero": 2,
+        "fecha": "15/07/2024",
+        "acto": "ACTA DE AUDIENCIA DE PRUEBAS",
+        "sumilla": "SE ACTÚAN PRUEBAS DECISIVAS EN LA AUDIENCIA (VIDEO DEL ACTO).",
+        "responsable": "ESPECIALISTA LEGAL",
+        "pdfUrl": "https://drive.google.com/file/d/1kU_iE30jHUItXxW7k4eGLRqTrS_YunK0/preview",
+        "cedulas": []
+      },
+      {
+        "numero": 1,
+        "fecha": "03/06/2024",
+        "acto": "DEMANDA",
+        "sumilla": "SE INTERPONE DEMANDA DE ANULABILIDAD POR DOLO (COMPRAVENTA).",
+        "responsable": "MESA DE PARTES",
+        "pdfUrl": "https://drive.google.com/file/d/1qDnc_lwNAmEH36AwrZsr1K7B_DZSlJMe/preview",
+        "cedulas": []
+      }
+    ]
   }
 ];
 
 let DB_EXPS = [...BASE_EXPS]; // Siempre disponibles sin servidor
 
 async function cargarDB() {
-  // Intentar cargar JSON adicional (funciona en GitHub Pages / servidor local)
   try {
-    const r = await fetch("data/expedientes.json?t=" + Date.now());
+    const r = await fetch('data/expedientes.json?t=' + Date.now());
     if (r.ok) {
       const fetched = await r.json();
-      const yaEnDB = new Set(DB_EXPS.map(x=>x.codigo));
-      fetched.forEach(x => { if (!yaEnDB.has(x.codigo)) DB_EXPS.push(x); });
+      fetched.forEach(x => {
+        const idx = DB_EXPS.findIndex(e => e.codigo === x.codigo);
+        if (idx !== -1) DB_EXPS[idx] = x;
+        else DB_EXPS.push(x);
+      });
+      try {
+        const local = JSON.parse(localStorage.getItem('sice_exps_v2') || '[]');
+        const cleaned = local.filter(x => x.codigo !== '00957-2022-0-2111-JR-LA-01');
+        localStorage.setItem('sice_exps_v2', JSON.stringify(cleaned));
+      } catch(_) {}
     }
-  } catch(_) { /* Sin servidor: usa solo los datos integrados */ }
-  // Agregar/actualizar los que el admin guardó en localStorage
-  const local = JSON.parse(localStorage.getItem("sice_exps_v2") || "[]");
+  } catch(_) {}
+  const local = JSON.parse(localStorage.getItem('sice_exps_v2') || '[]');
   local.forEach(x => {
-    const idx = DB_EXPS.findIndex(e => e.codigo === x.codigo);
-    if (idx !== -1) DB_EXPS[idx] = x;
-    else DB_EXPS.push(x);
+    const isBase = BASE_EXPS.some(b => b.codigo === x.codigo);
+    if (!isBase) {
+      const idx = DB_EXPS.findIndex(e => e.codigo === x.codigo);
+      if (idx !== -1) DB_EXPS[idx] = x;
+      else DB_EXPS.push(x);
+    }
   });
 }
 
 function getCustomExps() { return JSON.parse(localStorage.getItem("sice_exps_v2") || "[]"); }
 function saveCustomExps(arr) { localStorage.setItem("sice_exps_v2", JSON.stringify(arr)); }
-
-/* ===== AUTENTICACIÓN ===== */
-const sha = async t => [...new Uint8Array(
-  await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t))
-)].map(b=>b.toString(16).padStart(2,"0")).join("");
-
-// Usuarios por defecto siempre disponibles sin necesidad de registrarse primero
-const HASH_123456 = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"; // sha256("123456")
-const DEFAULT_USERS = {
-  "harry": { h: HASH_123456, nombre: "Harry (Administrador)" },
-  "admin": { h: HASH_123456, nombre: "Administrador" },
-  "usuario": { h: HASH_123456, nombre: "Usuario Demo" }
-};
-const users = () => {
-  const local = JSON.parse(localStorage.getItem("sice_users") || "{}");
-  return { ...DEFAULT_USERS, ...local };
-};
-let registro = false, finSesion = 0, timer, sesionActual = "";
-
-$("btnModo").onclick = () => {
-  registro = !registro;
-  $("tituloLogin").textContent = registro ? "Crear cuenta" : "Iniciar sesión";
-  $("btnLogin").textContent    = registro ? "Registrarme" : "Ingresar";
-  $("btnModo").textContent     = registro ? "Ya tengo cuenta" : "¿No tienes cuenta? Regístrate";
-  $("lblNombre").hidden = !registro;
-  $("loginMsg").textContent = "";
-};
-
-$("formLogin").onsubmit = async e => {
-  e.preventDefault();
-  const u = $("lUser").value.trim().toLowerCase(),
-        h = await sha($("lPass").value),
-        db = users(), m = $("loginMsg");
-  if (registro) {
-    const local = JSON.parse(localStorage.getItem("sice_users") || "{}");
-    if (local[u]) {
-      m.className = "msg";
-      return m.textContent = "Ese usuario ya existe.";
-    }
-    local[u] = { h, nombre: $("lNombre").value.trim() || u };
-    localStorage.setItem("sice_users", JSON.stringify(local));
-    registro = true;
-    $("btnModo").click();
-    m.className = "msg ok";
-    m.textContent = "¡Cuenta creada con éxito! Ya puedes ingresar.";
-  } else {
-    if (!db[u] || db[u].h !== h) {
-      m.className = "msg";
-      return m.textContent = "Usuario o contraseña incorrectos.";
-    }
-    sessionStorage.setItem("sice_sesion", u);
-    entrar(u, db[u].nombre);
-  }
-};
-
-function entrar(usuario, nombre) {
-  sesionActual = usuario;
-  $("vistaLogin").hidden = true;
-  $("vistaApp").hidden = false;
-  $("usuario").textContent = nombre;
-  finSesion = Date.now() + 15*60000;
-  clearInterval(timer);
-  timer = setInterval(reloj, 1000);
-  reloj();
-  nuevoCaptcha();
-  $("btnAdmin").hidden = (usuario !== ADMIN_USER && usuario !== "admin");
-  if (!$("botMsgs").children.length)
-    botDi("Hola, soy el asistente del SICE. Pregúntame sobre juzgados, expedientes o leyes peruanas.");
-}
-
-function salir() { sessionStorage.removeItem("sice_sesion"); location.reload(); }
-$("btnSalir").onclick = salir;
-
-function reloj() {
-  const r = Math.max(0, finSesion - Date.now()), p = n => String(n).padStart(2,"0");
-  $("reloj").innerHTML =
-    `Fecha: ${new Date().toLocaleString("es-PE")}<br>` +
-    `Tiempo restante: ${p(Math.floor(r/60000))}:${p(Math.floor(r%60000/1000))}`;
-  if (!r) { alert("Tu sesion expiro."); salir(); }
-}
-
-(() => {
-  const s = sessionStorage.getItem("sice_sesion"), db = users();
-  if (s && db[s]) entrar(s, db[s].nombre);
-})();
-
-/* ===== CAPTCHA ===== */
-let capTxt = "";
-function nuevoCaptcha() {
-  const ch = "abcdefghjkmnpqrstuvwxyz23456789"; capTxt = "";
-  for (let i=0;i<5;i++) capTxt += ch[crypto.getRandomValues(new Uint32Array(1))[0] % ch.length];
-  const c=$("cap"),g=c.getContext("2d");
-  g.fillStyle="#000"; g.fillRect(0,0,170,46);
-  for(let i=0;i<6;i++){
-    g.strokeStyle=`rgba(255,255,255,${Math.random()*.25})`;
-    g.beginPath(); g.moveTo(0,Math.random()*46); g.lineTo(170,Math.random()*46); g.stroke();
-  }
-  g.font="italic bold 26px Georgia"; g.fillStyle="#ff3b3b";
-  [...capTxt].forEach((l,i)=>{
-    g.save(); g.translate(18+i*30,31);
-    g.rotate((Math.random()-.5)*.5);
-    g.fillText(Math.random()>.5?l.toUpperCase():l,0,0); g.restore();
-  });
-  $("capIn").value="";
-}
-$("capRef").onclick = nuevoCaptcha;
-$("capVoz").onclick = () => {
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance([...capTxt].join(" "));
-  u.lang="es-PE"; speechSynthesis.speak(u);
-};
-
-/* ===== FORMULARIO BUSQUEDA ===== */
-fill($("fDist"), Object.fromEntries(Object.keys(DIST).map(k=>[k,k])), "Seleccione");
-fill($("fInst"), INST, "Seleccione");
-fill($("fEsp"),  ESP,  "Seleccione");
-$("fAnio").innerHTML = "<option value=''>Seleccione</option>" +
-  Array.from({length:12},(_,i)=>2026-i).map(a=>`<option>${a}</option>`).join("");
-
-let modo = "filtros";
-document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
-  modo = t.dataset.t;
-  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
-  $("pFiltros").hidden = modo!=="filtros";
-  $("pCodigo").hidden  = modo!=="codigo";
-  $("busqMsg").textContent = "";
-});
-document.querySelectorAll("[data-ej]").forEach(b => b.onclick = () => {
-  b.dataset.ej.split("-").forEach((v,i) => $("c"+(i+1)).value = v);
-});
-
-$("formBusq").onsubmit = e => {
-  e.preventDefault();
-  const m = $("busqMsg"); m.className = "msg"; m.textContent = "";
-
-  // Validar captcha
-  if ($("capIn").value.trim().toLowerCase() !== capTxt) {
-    m.textContent = "El codigo de confirmacion es incorrecto.";
-    return nuevoCaptcha();
-  }
-
-  // Parte es OPCIONAL. Si se escribe, minimo 3 letras
-  const parteRaw = $("fParte").value.trim();
-  const parte    = norm(parteRaw);
-  if (parteRaw.length > 0 && parte.length < 3) {
-    return m.textContent = "Si escribes la parte, usa al menos 3 letras.";
-  }
-
-  // Construir filtro segun modo
-  let f;
-  if (modo === "filtros") {
-    const numVal = $("fNum").value.trim();
-    if (!numVal) return m.textContent = "Ingresa al menos el N° de Expediente (*).";
-    const num     = numVal.padStart(5, "0");
-    const distVal = $("fDist").value;
-    const instVal = $("fInst").value;
-    const espVal  = $("fEsp").value;
-    const anioVal = $("fAnio").value;
-    f = x =>
-      x.sec === num &&
-      (!distVal || x.dist === DIST[distVal]) &&
-      (!instVal || x.inst === instVal) &&
-      (!espVal  || x.esp  === espVal)  &&
-      (!anioVal || x.anio === anioVal);
-  } else {
-    // Modo codigo: detectar si pegaron el codigo completo en c1
-    const c1 = $("c1").value.trim();
-    if (c1.includes("-") && c1.split("-").length === 7) {
-      c1.split("-").forEach((v, i) => $("c" + (i + 1)).value = v);
-    }
-    const v = [1,2,3,4,5,6,7].map(i => $("c"+i).value.trim().toUpperCase());
-    if (v.some(x => !x)) return m.textContent = "Completa los 7 campos del codigo.";
-    f = x => x.codigo === v.join("-");
-  }
-
-  // Filtrar expedientes
-  const r = DB_EXPS.filter(x => {
-    if (!f(x)) return false;
-    if (parte.length >= 3) {
-      return x.partes.some(p => {
-        const texto = norm((p.nombres||"")+" "+(p.apellidoPaterno||"")+" "+(p.apellidoMaterno||""));
-        return texto.includes(parte);
-      });
-    }
-    return true; // sin parte: muestra todos los que coincidan con el filtro
-  });
-
-  if (!r.length) m.textContent = "No se encontraron expedientes. Verifica los datos ingresados.";
-  mostrarResultados(r);
-  nuevoCaptcha();
-};
-
-/* ===== TABLA DE RESULTADOS ===== */
-function mostrarResultados(r) {
-  const R=$("resultados"); R.hidden=false;
-  $("detalleExp").hidden = true;
-  if (!r.length) {
-    R.innerHTML="<h3>Resultados</h3><p class='vacio'>No se encontraron expedientes. Verifica el codigo, anio, especialidad y la parte.</p>";
-    return;
-  }
-  R.innerHTML = `<h3>Resultados (${r.length})</h3>
-    <table><tr><th>Expediente</th><th>Organo</th><th>Materia</th><th>Estado</th></tr>` +
-    r.map((x,i)=>`<tr>
-      <td><button class="link-exp" data-i="${i}">${x.codigo}</button></td>
-      <td>${INST[x.inst]||x.inst}<br><small>${ESP[x.esp]||x.esp}</small></td>
-      <td>${x.reporte.materia}</td>
-      <td><span class="badge-estado">${x.reporte.estado}</span></td>
-    </tr>`).join("") + "</table>";
-  R.querySelectorAll(".link-exp").forEach(b => b.onclick = () => mostrarDetalle(r[b.dataset.i]));
-  R.scrollIntoView({behavior:"smooth"});
-}
-
-/* ===== VISTA DETALLE (estilo capturas) ===== */
-let paginaActual = 1, actsPorPag = 3, expActual = null;
-
-function mostrarDetalle(x) {
-  expActual = x;
-  paginaActual = 1;
-  const D = $("detalleExp"); D.hidden = false;
-  const rp = x.reporte, pr = x.progreso;
-
-  // ---- CASE REPORT ----
-  $("det-codigo").textContent = x.codigo;
-  $("det-organo").textContent = rp.organoJurisdiccional;
-  $("det-juez").textContent   = rp.juez;
-  $("det-fechaIni").textContent = rp.fechaInicio;
-  $("det-obs").textContent    = rp.observacion;
-  $("det-materia").textContent= rp.materia;
-  $("det-etapa").textContent  = rp.etapaProcesal;
-  $("det-ubicacion").textContent = rp.ubicacion;
-  $("det-sumilla").textContent= rp.sumilla;
-  $("det-distrito").textContent = rp.distritoJudicial;
-  $("det-especialista").textContent = rp.especialistaLegal;
-  $("det-proceso").textContent= rp.proceso;
-  $("det-especialidad").textContent = rp.especialidad;
-  $("det-estado").textContent = rp.estado;
-  $("det-fechaFin").textContent = rp.fechaConclusion || "—";
-  $("det-motivo").textContent = rp.motivoConclusion || "—";
-
-  // ---- PROGRESO ----
-  $("det-progreso-bar").style.width = pr.porcentaje + "%";
-  $("det-progreso-pct").textContent = pr.porcentaje + "%";
-  $("det-progreso-msg").textContent = pr.mensaje;
-  renderEtapas(pr.etapas);
-  renderHitos(pr.hitos);
-
-  // ---- PARTES ----
-  renderPartes(x.partes);
-
-  // ---- ACTUACIONES ----
-  renderActuaciones(x.actuaciones);
-
-  D.scrollIntoView({behavior:"smooth"});
-}
-
-function renderEtapas(etapas) {
-  $("det-etapas").innerHTML = etapas.map(e=>`
-    <div class="etapa-item ${e.estado}">
-      <div class="etapa-icon">${e.estado==="done"?"✔":e.estado==="current"?"▶":"○"}</div>
-      <div class="etapa-info">
-        <b>${e.nombre}</b>${e.estado==="current"?'<span class="badge-current">ETAPA ACTUAL</span>':''}
-        <small>${e.desc}</small>
-      </div>
-    </div>`).join("");
-}
-
-function renderHitos(hitos) {
-  $("det-hitos").innerHTML = hitos.map(h=>`
-    <div class="hito-item">
-      <div class="hito-dot"></div>
-      <div class="hito-info">
-        <b>${h.descripcion}</b>
-        <small>${h.fecha}</small>
-      </div>
-    </div>`).join("");
-}
-
-function renderPartes(partes) {
-  $("det-partes").innerHTML = partes.map(p=>`
-    <tr>
-      <td>${p.rol}</td>
-      <td>${p.tipoPers}</td>
-      <td>${p.apellidoPaterno||"—"}</td>
-      <td>${p.apellidoMaterno||"—"}</td>
-      <td>${p.nombres||p.apellidoPaterno}</td>
-    </tr>`).join("");
-}
-
-/* ===== VISOR PDF INTEGRADO ===== */
-async function abrirVisorPdf(url, titulo) {
-  if (!url) {
-    alert("El documento digitalizado aun no se encuentra disponible.");
-    return;
-  }
-  let finalUrl = url.trim();
-
-  // Si es un PDF subido localmente desde el Administrador
-  if (finalUrl.startsWith("idb:")) {
-    try {
-      if (window.obtenerPdfLocal) {
-        const item = await window.obtenerPdfLocal(finalUrl);
-        if (item && item.blob) {
-          finalUrl = URL.createObjectURL(item.blob);
-        }
-      }
-    } catch (err) {
-      console.error("Error al cargar PDF local:", err);
-    }
-  } else {
-    // Convertir enlaces compartidos de Google Drive al formato de visor integrado /preview
-    const driveMatch = finalUrl.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
-    if (driveMatch) {
-      finalUrl = "https://drive.google.com/file/d/" + driveMatch[1] + "/preview";
-    }
-  }
-
-  $("pdfModalTitle").textContent = titulo || "Visor de Documento";
-  $("pdfModalIframe").src = finalUrl;
-  $("pdfModalLinkExt").href = finalUrl;
-  $("modalPdf").hidden = false;
-  document.body.style.overflow = "hidden";
-}
-
-function cerrarVisorPdf() {
-  $("modalPdf").hidden = true;
-  $("pdfModalIframe").src = "";
-  document.body.style.overflow = "";
-}
-window.abrirVisorPdf = abrirVisorPdf;
-window.cerrarVisorPdf = cerrarVisorPdf;
-
-$("btnCerrarPdf").onclick = cerrarVisorPdf;
-$("modalPdf").addEventListener("click", e => {
-  if (e.target === $("modalPdf")) cerrarVisorPdf();
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && !$("modalPdf").hidden) cerrarVisorPdf();
-});
-
-function renderActuaciones(acts) {
-  const total     = acts.length;
-  const totalPags = Math.ceil(total / actsPorPag);
-  const inicio    = (paginaActual - 1) * actsPorPag;
-  const pagina    = acts.slice(inicio, inicio + actsPorPag);
-
-  $('det-acts').innerHTML = pagina.map(a => {
-    // Cedulas / notificaciones
-    const cedulasHTML = (a.cedulas || []).map(c => `
-      <div class="notif-card">
-        <div class="notif-hdr"><span class="notif-tipo">| NOTIFICACION CEDULA ${c.numero} - <b>${c.parte}</b></span></div>
-        <div class="notif-body">
-          <div class="notif-left">
-            <div class="notif-row"><span>Destinatario:</span> <b>${c.destinatario}</b></div>
-            <div class="notif-row"><span>Fecha de envio:</span> ${c.fechaEnvio}</div>
-          </div>
-          <div class="notif-right">
-            <div class="notif-row"><span>Forma de entrega:</span> <b>${c.formaEntrega || 'CASILLA ELECTRONICA'}</b></div>
-            <div class="notif-btns">
-              <button type="button" class="btn-notif-det" onclick="alert('Detalle de Cedula N° ${c.numero}\nDestinatario: ${c.destinatario}\nFecha de envio: ${c.fechaEnvio}\nEntrega: ${c.formaEntrega || 'CASILLA ELECTRONICA'}')">DETALLES 🔍</button>
-              ${c.pdfUrl
-                ? `<button type="button" class="btn-notif-doc" onclick="abrirVisorPdf('${c.pdfUrl}', 'CEDULA ${c.numero} - ${c.parte}')">VER CEDULA 🖨</button>`
-                : `<button type="button" class="btn-notif-doc-off" disabled title="Cedula no digitalizada">VER CEDULA 🖨</button>`}
-            </div>
-          </div>
-        </div>
-      </div>`).join('');
-
-    // Botones de documentos
-    let btnDoc = '';
-    if (a.docs && a.docs.length > 0) {
-      btnDoc = '<div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0">' +
-        a.docs.map(d => `<button type="button" class="btn-ver-doc" onclick="abrirVisorPdf('${d.url}', '${a.acto} - ${d.label}')">VER ${d.label.toUpperCase()} 🖨</button>`).join('') +
-        '</div>';
-    } else if (a.pdfUrl) {
-      btnDoc = `<button type="button" class="btn-ver-doc" onclick="abrirVisorPdf('${a.pdfUrl}', '${a.acto}')">VER DOCUMENTO 🖨</button>`;
-    } else {
-      btnDoc = `<button type="button" class="btn-ver-doc-off" disabled title="Documento no disponible">VER DOCUMENTO 🖨</button>`;
-    }
-
-    return `
-    <div class="act-card">
-      <span class="act-num">N° ${a.numero}</span>
-      <div class="act-body">
-        <div class="act-top">
-          <span><b>Fecha/Resolucion:</b> ${a.fecha}</span>
-          <span><b>Acto:</b> ${a.acto}</span>
-        </div>
-        <div class="act-sumilla-block">
-          <div class="act-sumilla-label">≡ Sumilla:</div>
-          <div class="act-sumilla-txt">${a.sumilla}</div>
-        </div>
-        <div class="act-resp">Usuario Responsable: <b>${a.responsable}</b></div>
-        ${btnDoc}
-        ${cedulasHTML}
-      </div>
-    </div>`;
-  }).join('');
-
-  let pags = `<button class="pag-btn" ${paginaActual===1?'disabled':''} data-p="1">Inicio</button>`;
-  pags    += `<button class="pag-btn" ${paginaActual===1?'disabled':''} data-p="${paginaActual-1}">&#8249;</button>`;
-  for (let i = 1; i <= totalPags; i++)
-    pags += `<button class="pag-btn ${i===paginaActual?'active':''}" data-p="${i}">${i}</button>`;
-  pags    += `<button class="pag-btn ${paginaActual===totalPags?'disabled':''} data-p="${paginaActual+1}">&#8250;</button>`;
-  $('det-paginacion').innerHTML = pags;
-  $('det-paginacion').querySelectorAll('.pag-btn:not([disabled])').forEach(b =>
-    b.onclick = () => { paginaActual = parseInt(b.dataset.p); renderActuaciones(expActual.actuaciones); }
-  );
-}
-
-/* ===== ENLACE A PANEL DE ADMINISTRACIÓN (admin.html) ===== */
-if ($("btnAdmin")) {
-  $("btnAdmin").onclick = e => {
-    // Abre admin.html en una nueva ventana/pestaña limpia
-    window.open("admin.html", "_blank");
-  };
-}
-
-/* ===== CHATBOT ===== */
-const KB=[
-  [["paz letrado","jp"],"El Juzgado de Paz Letrado (JP) es de primera instancia y conoce procesos de alimentos, menor cuantia y civiles de cuantia reducida."],
-  [["especializado","jr"],"El Juzgado Especializado (JR) conoce procesos de mayor complejidad y resuelve apelaciones de los Juzgados de Paz Letrados."],
-  [["sala superior","sp","apelacion"],"La Sala Superior (SP) es segunda instancia: revisa por apelacion las decisiones de los Juzgados Especializados."],
-  [["codigo de expediente","formato","numero de expediente"],"El codigo tiene 7 partes: Secuencia(5)-Anio(4)-Organo(1)-Distrito(4)-Instancia(2)-Especialidad(2)-Correlativo(2). Ej: 00203-2025-0-2101-JP-FC-01."],
-  [["alimentos","29497","beneficios"],"Alimentos: Ley 27337 (Codigo Ninos y Adolescentes). Deudores morosos: REDAM (Ley 28970)."],
-  [["penal","957"],"El proceso penal se rige por el Nuevo Codigo Procesal Penal (D.Leg. 957), modelo acusatorio."],
-  [["hola","buenas"],"Hola. Preguntame sobre juzgados, expedientes o leyes peruanas."]
-];
-const DOMINIO=["juzgad","juez","sala","ley","codigo","expediente","proceso","demanda","sentencia","judicial","instancia","derecho"];
-function botDi(t,u){const d=document.createElement("div");d.className="m "+(u?"u":"b");d.textContent=t;$("botMsgs").append(d);$("botMsgs").scrollTop=1e6;}
-$("botFab").onclick  = ()=>$("bot").hidden = !$("bot").hidden;
-$("botX").onclick    = ()=>$("bot").hidden = true;
-$("navAyuda").onclick= e=>{ e.preventDefault(); $("bot").hidden=false; };
-$("botForm").onsubmit= e=>{
-  e.preventDefault(); const q=$("botIn").value.trim(); if(!q) return; $("botIn").value=""; botDi(q,1);
-  const n=" "+q.toLowerCase()+" ";
-  const hit=KB.find(([ks])=>ks.some(k=>k.length<=2?new RegExp(`\\b${k}\\b`).test(n):n.includes(k)));
-  setTimeout(()=>botDi(hit?hit[1]+"\n\nInformacion referencial.":
-    DOMINIO.some(d=>n.includes(d))?"No tengo ese dato. Consulta sobre juzgados, expedientes o leyes.":
-    "Solo respondo sobre juzgados y expedientes."),350);
-};
-
-/* ===== INICIO ===== */
-cargarDB();
