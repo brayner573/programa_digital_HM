@@ -39,14 +39,6 @@ if ($("btnTogglePass")) {
     $("btnTogglePass").innerHTML = isPass ? '<i class="fa-regular fa-eye-slash"></i>' : '<i class="fa-regular fa-eye"></i>';
   };
 }
-if ($("btnQuickAccess")) {
-  $("btnQuickAccess").onclick = () => {
-    $("lUser").value = "harry";
-    $("lPass").value = "123456";
-    toast("Credenciales cargadas: harry / 123456");
-  };
-}
-
 /* ===================== AUTENTICACIÓN ===================== */
 const sha = async t => [...new Uint8Array(
   await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t))
@@ -54,9 +46,9 @@ const sha = async t => [...new Uint8Array(
 
 const HASH_123456 = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"; // sha256("123456")
 const DEFAULT_USERS = {
-  harry:   { h: HASH_123456, nombre: "Harry (Administrador)" },
-  admin:   { h: HASH_123456, nombre: "Administrador" },
-  usuario: { h: HASH_123456, nombre: "Usuario Demo" }
+  usuario: { h: HASH_123456, nombre: "Usuario Judicial" },
+  admin:   { h: HASH_123456, nombre: "Administrador del Sistema" },
+  harry:   { h: HASH_123456, nombre: "Administrador del Sistema" }
 };
 const users = () => ({ ...DEFAULT_USERS, ...JSON.parse(localStorage.getItem("sice_users") || "{}") });
 let registro = false, finSesion = 0, timer = null;

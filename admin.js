@@ -18,12 +18,12 @@ const ESTADOS = [
 
 const $ = id => document.getElementById(id);
 
-// 1. Verificación de sesión de Harry
-let sesionActual = sessionStorage.getItem("sice_sesion") || "harry";
+// 1. Verificación de sesión de administración
+let sesionActual = sessionStorage.getItem("sice_sesion") || "admin";
 if (!sessionStorage.getItem("sice_sesion")) {
-  sessionStorage.setItem("sice_sesion", "harry");
+  sessionStorage.setItem("sice_sesion", "admin");
 }
-$("admUsuarioNom").textContent = sesionActual.toUpperCase() + " (ADMIN)";
+$("admUsuarioNom").textContent = "ADMINISTRADOR";
 
 $("btnSalirAdmin").onclick = () => {
   sessionStorage.removeItem("sice_sesion");

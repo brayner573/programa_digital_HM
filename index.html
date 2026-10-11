@@ -77,7 +77,7 @@
           <span>Usuario</span>
           <div class="lg-input">
             <i class="fa-solid fa-user"></i>
-            <input id="lUser" required minlength="4" placeholder="Ej. harry" value="harry">
+            <input id="lUser" required minlength="4" placeholder="Ej. usuario" autocomplete="username">
           </div>
         </label>
 
@@ -85,7 +85,7 @@
           <span>Contraseña</span>
           <div class="lg-input">
             <i class="fa-solid fa-lock"></i>
-            <input id="lPass" type="password" required minlength="6" placeholder="••••••" value="123456">
+            <input id="lPass" type="password" required minlength="6" placeholder="••••••••" autocomplete="current-password">
             <button type="button" class="btn-pwd-toggle" id="btnTogglePass" title="Ver contraseña"><i class="fa-regular fa-eye"></i></button>
           </div>
         </label>
@@ -104,11 +104,6 @@
           <span>INGRESAR AL SISTEMA</span>
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
         </button>
-
-        <div class="login-quick-access" id="btnQuickAccess" title="Clic para rellenar usuario demo">
-          <i class="fa-solid fa-bolt"></i>
-          <span>Acceso Rápido: <b>harry</b> / <b>123456</b></span>
-        </div>
 
         <button class="btn-link" type="button" id="btnModo">¿No tienes cuenta? Regístrate</button>
         <button class="btn-link-sec" type="button" id="btnVerAdvertencia"><i class="fa-solid fa-triangle-exclamation"></i> Ver advertencia de simulación</button>

@@ -1,4 +1,4 @@
-﻿/* ================================================================
+/* ================================================================
    SICE - app.js
    Base de datos: data/expedientes.json (GitHub Pages friendly)
 ================================================================ */
@@ -15,7 +15,7 @@ const INST   = {
 };
 const ESP    = { FC:"FAMILIA CIVIL", CI:"CIVIL", PE:"PENAL", LA:"LABORAL", CO:"COMERCIAL" };
 const ESTADOS = ["EN TRAMITE","EN EJECUCION","CONCLUIDO","ARCHIVADO","EN EJECUCION / RES JUDICATA"];
-const ADMIN_USER = "harry";
+const ADMIN_USER = "admin";
 
 /* ===== UTIL ===== */
 const $ = id => document.getElementById(id);
